@@ -1,0 +1,67 @@
+import type { Experience } from '@/types'
+
+export const experiences: Experience[] = [
+  {
+    id: 'mobidoo',
+    company: '모비두',
+    role: 'Frontend Developer',
+    period: '2024.11 ~ 현재',
+    current: true,
+    description: 'B2B 라이브커머스 솔루션 — 삼성·티웨이·푸마·지마켓 등 고객사에 커머스 지면·운영 어드민 제공 (소스클립·소스링크·EngageKit) · 개발팀 16인',
+    achievements: [
+      '라이브 방송 소개 에디터(WYSIWYG)·쇼룸 전시 솔루션 개발 — 티웨이·푸마·아디다스·삼성닷컴 적용',
+      'EngageKit Engagement 고도화(퀴즈·구매인증·쿠폰) 어드민 전반 — 삼성 S26 참여 1.1만 명',
+      '소스링크 어필리에이트 — 링크·캠페인 비대칭 귀속 구조 어드민·크리에이터 양면 구현',
+      '스탭 권한 경계 취약점·라이브 송출 장애 등 운영 리스크 자발 발견·해결',
+      'AI 기반 컨벤션 자동 점검 체계 설계·도입 (규칙 17 → 56개 전수 자동화)',
+      'Vue → Next.js 마이그레이션 QA 0건 · TanStack Query 최초 도입',
+      '클립 플레이어 댓글 E2E 런칭 · MMP 연동 · 성능 최적화',
+    ],
+    techStack: ['Next.js', 'TypeScript', 'TanStack Query', 'Zustand', 'Datadog'],
+    color: '#000000',
+  },
+  {
+    id: 'nexacode',
+    company: 'NEXACODE',
+    role: '프론트엔드 / 개발 1팀',
+    period: '2024.03 ~ 2024.10',
+    current: false,
+    description: 'SI — 다수 클라이언트 프로젝트 납품',
+    achievements: [
+      '팀 공용 Next.js 보일러플레이트 설계·표준화 주도 (FE 개발 기간 30 → 15일 단축)',
+      '위대한 육아 React Native 앱 단독 런칭 — 기능 정의서·API 명세 직접 작성',
+      '운세나라 SEO 최적화로 구글 키워드 첫 페이지 2번째 줄 진입',
+    ],
+    techStack: ['Next.js', 'React Native', 'TypeScript', 'Recoil'],
+    color: '#C9A227',
+  },
+  {
+    id: 'payhada',
+    company: 'PAYHADA',
+    role: 'ICT 연구원',
+    period: '2022.08 ~ 2024.01',
+    current: false,
+    description: '핀테크 글로벌 송금 앱',
+    achievements: [
+      '앱 보안 취약점 대응 — RSA·E2E 암호화 적용, 금융보안원 전 항목 100% 양호',
+      '어드민 리뉴얼 (재사용 컴포넌트 60%↑) · Axios interceptors 도입',
+      'Naver Cloud 배포 자동화로 배포 시간 50%↓ · 글로벌 유저 가입률 5% 증가',
+    ],
+    techStack: ['React Native', 'React', 'TypeScript', 'Recoil', 'Naver Cloud'],
+    color: '#E94B4B',
+  },
+  {
+    id: 'ace',
+    company: 'ACE 엔터테인먼트',
+    role: '개발팀 사원',
+    period: '2022.04 ~ 2022.07',
+    current: false,
+    description: '홀덤 멤버십 Admin 초기 구축',
+    achievements: [
+      'Vue.js + Vuex로 홀덤 멤버십 Admin 페이지 초기 구축',
+      '회원·포인트·정산 기능 구현 및 API 연동',
+    ],
+    techStack: ['Vue.js', 'Vuex', 'SCSS'],
+    color: '#FFA14A',
+  },
+]
