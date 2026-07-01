@@ -39,7 +39,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           setIsOpen((v) => !v)
         }
       }}
-      className={`group relative flex flex-col min-h-[300px] bg-white border border-[#e5e7eb] rounded-2xl p-6 overflow-hidden transition-[border-color,box-shadow] duration-300 hover:border-[#FA225633] hover:shadow-[0_20px_40px_rgba(250,34,86,0.1)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FA2256] ${hasHighlights ? 'cursor-pointer' : 'cursor-default'}`}
+      className={`group relative flex flex-col min-h-[300px] bg-white border border-[#e5e7eb] rounded-2xl p-6 ${hasHighlights ? 'pb-9' : ''} overflow-hidden transition-[border-color,box-shadow] duration-300 hover:border-[#FA225633] hover:shadow-[0_20px_40px_rgba(250,34,86,0.1)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FA2256] ${hasHighlights ? 'cursor-pointer' : 'cursor-default'}`}
     >
       {/* 상단 메타 */}
       <div className="flex items-center justify-between mb-4">
