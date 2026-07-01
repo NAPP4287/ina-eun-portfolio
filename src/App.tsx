@@ -1,4 +1,4 @@
-import { useScroll, useTransform, motion } from 'framer-motion'
+import { useScroll, useTransform, motion, MotionConfig } from 'framer-motion'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import Hero from '@/components/sections/Hero'
@@ -15,24 +15,26 @@ export default function App() {
   const scaleX = useTransform(scrollYProgress, [0, 1], [0, 1])
 
   return (
-    <div className="bg-[#fafafa] text-[#0f0f0f] min-h-screen">
-      {/* 스크롤 진행 바 */}
-      <motion.div
-        style={{ scaleX, transformOrigin: 'left' }}
-        className="fixed top-0 left-0 right-0 h-[3px] bg-[#FA2256] z-[100]"
-      />
-      <Header />
-      <main>
-        <Hero />
-        <About />
-        <Skills />
-        <Experience />
-        <Projects />
-        <SideProjects />
-        <Contact />
-      </main>
-      <Footer />
-      <ScrollToTop />
-    </div>
+    <MotionConfig reducedMotion="user">
+      <div className="bg-[#fafafa] text-[#0f0f0f] min-h-screen">
+        {/* 스크롤 진행 바 */}
+        <motion.div
+          style={{ scaleX, transformOrigin: 'left' }}
+          className="fixed top-0 left-0 right-0 h-[3px] bg-[#FA2256] z-[100]"
+        />
+        <Header />
+        <main>
+          <Hero />
+          <About />
+          <Projects />
+          <Experience />
+          <Skills />
+          <SideProjects />
+          <Contact />
+        </main>
+        <Footer />
+        <ScrollToTop />
+      </div>
+    </MotionConfig>
   )
 }

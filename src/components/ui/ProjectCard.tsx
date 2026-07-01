@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { useState } from 'react'
 import type { Project } from '@/types'
 
 interface ProjectCardProps {
@@ -14,6 +15,8 @@ const categoryColors: Record<string, string> = {
 
 export default function ProjectCard({ project }: ProjectCardProps) {
   const accentColor = categoryColors[project.company] ?? '#FA2256'
+  const [isOpen, setIsOpen] = useState(false)
+  const hasHighlights = Boolean(project.highlights && project.highlights.length > 0)
 
   return (
     <motion.div
@@ -26,7 +29,17 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         layout: { type: 'spring', stiffness: 320, damping: 32 },
       }}
       whileHover={{ y: -8, transition: { type: 'spring', stiffness: 400, damping: 25 } }}
-      className="group relative flex flex-col min-h-[300px] bg-white border border-[#e5e7eb] rounded-2xl p-6 cursor-default overflow-hidden transition-[border-color,box-shadow] duration-300 hover:border-[#FA225633] hover:shadow-[0_20px_40px_rgba(250,34,86,0.1)]"
+      role={hasHighlights ? 'button' : undefined}
+      tabIndex={hasHighlights ? 0 : undefined}
+      aria-expanded={hasHighlights ? isOpen : undefined}
+      onClick={() => hasHighlights && setIsOpen((v) => !v)}
+      onKeyDown={(e) => {
+        if (hasHighlights && (e.key === 'Enter' || e.key === ' ')) {
+          e.preventDefault()
+          setIsOpen((v) => !v)
+        }
+      }}
+      className={`group relative flex flex-col min-h-[300px] bg-white border border-[#e5e7eb] rounded-2xl p-6 overflow-hidden transition-[border-color,box-shadow] duration-300 hover:border-[#FA225633] hover:shadow-[0_20px_40px_rgba(250,34,86,0.1)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FA2256] ${hasHighlights ? 'cursor-pointer' : 'cursor-default'}`}
     >
       {/* 상단 메타 */}
       <div className="flex items-center justify-between mb-4">
@@ -77,12 +90,23 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         )}
       </div>
 
-      {/* 호버 시 highlights 오버레이 */}
-      {project.highlights && project.highlights.length > 0 && (
-        <div className="absolute inset-0 z-10 bg-white p-6 flex flex-col justify-center overflow-y-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl">
+      {/* 주요 기여 힌트 (탭/호버 전) */}
+      {hasHighlights && (
+        <span className="absolute bottom-3 right-4 text-[10px] text-[#9ca3af] group-hover:opacity-0 transition-opacity">
+          탭하여 주요 기여 보기
+        </span>
+      )}
+
+      {/* highlights 오버레이 — 탭/클릭, 호버, 키보드 포커스로 노출 */}
+      {hasHighlights && (
+        <div
+          className={`absolute inset-0 z-10 bg-white p-6 flex flex-col justify-center overflow-y-auto transition-opacity duration-300 rounded-2xl ${
+            isOpen ? 'opacity-100' : 'opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100'
+          }`}
+        >
           <p className="text-[#FA2256] text-xs font-semibold uppercase tracking-wider mb-3">주요 기여</p>
           <ul className="space-y-2.5">
-            {project.highlights.map((h, i) => (
+            {project.highlights!.map((h, i) => (
               <li key={i} className="flex gap-2 text-sm text-[#374151] leading-relaxed">
                 <span className="text-[#FA2256] mt-0.5 flex-shrink-0">→</span>
                 <span>{h}</span>

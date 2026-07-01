@@ -25,6 +25,8 @@ export const skillCategories: SkillCategory[] = [
       { name: 'Tailwind CSS', level: 'expert' },
       { name: 'Styled-components', level: 'proficient' },
       { name: 'SCSS', level: 'proficient' },
+      { name: 'tiptap', level: 'proficient' },
+      { name: 'Mantine', level: 'proficient' },
     ],
   },
   {
@@ -37,7 +39,6 @@ export const skillCategories: SkillCategory[] = [
       { name: 'Claude Code', level: 'expert' },
       { name: 'Datadog', level: 'familiar' },
       { name: 'Vite', level: 'proficient' },
-      { name: 'Webpack', level: 'familiar' },
     ],
   },
   {

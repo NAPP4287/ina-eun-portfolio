@@ -72,14 +72,15 @@ export const projects: Project[] = [
     description: '고객사 맞춤형 라이브커머스 전시 페이지 — 삼성닷컴 등 적용',
     detail:
       '고객사마다 브랜드 톤과 전시 방식이 달라 하나의 고정된 전시 페이지로는 대응 불가. 고객사가 자사 스타일에 맞게 커스텀하는 B2B 임베드형 쇼룸 서비스를 개발.',
-    techStack: ['Next.js', 'TypeScript'],
+    techStack: ['Next.js', 'TypeScript', 'iframe postMessage', '@hello-pangea/dnd'],
     category: 'product',
     company: '모비두',
     period: '2024.11 ~ 현재',
+    metrics: '10개 파트너사 사용 중',
     highlights: [
-      '삼성전자 공식몰(삼성닷컴) 등 고객사 전시 페이지 적용',
-      '고객사별 브랜드 스타일 커스터마이징 지원 구조 설계',
-      'B2B 임베드 방식으로 고객사 기존 서비스에 통합 가능',
+      'postMessage 브릿지로 콘텐츠·테마 변경을 iframe 미리보기에 실시간 반영 (크로스 프레임 통신)',
+      '배너 그룹 드래그 순서 변경, 공개상태(대기/공개/비공개)에 따른 삭제·정렬 제약 등 운영 규칙 반영',
+      '삼성전자 공식몰(삼성닷컴) 등 고객사 전시 페이지 적용, 현재 10개 파트너사가 사용 중',
     ],
   },
   {
@@ -91,7 +92,7 @@ export const projects: Project[] = [
     techStack: ['Next.js', 'TypeScript', 'TanStack Query', 'Zustand'],
     category: 'product',
     company: '모비두',
-    period: '2025.01 ~ 2025.03',
+    period: '2026.01 ~ 2026.03',
     metrics: '참여 1.1만 명 · 구매인증 8,140명',
     highlights: [
       '퀴즈·구매인증·쿠폰 3종 어드민 전체 설계·개발',
@@ -138,17 +139,17 @@ export const projects: Project[] = [
   {
     id: 'clip-player',
     title: '클립 플레이어 기능 개발·성능 최적화',
-    description: 'MMP 연동·댓글 E2E 런칭·WebP 이미지 최적화',
+    description: '댓글 기능 전 과정 단독 출시·MMP 연동·WebP 이미지 최적화',
     detail:
-      'Vite · React Router 기반 클립 플레이어. 댓글 기능 E2E 단독 런칭(어드민 Config 기반 on/off 안전장치), Airbridge·Appsflyer 2개사 MMP 연동, 상품 목록 99개 썸네일 성능 최적화.',
-    techStack: ['Vite', 'React', 'React Router', 'TypeScript', 'TanStack Query', 'Zustand'],
+      'Vite · React Router 기반 클립 플레이어. 댓글 기능 전 과정 단독 출시(어드민 Config 기반 on/off 안전장치), Airbridge·Appsflyer 2개사 MMP 연동, 상품 목록 99개 썸네일 성능 최적화.',
+    techStack: ['Vite', 'React', 'React Router', 'TypeScript', 'TanStack Query', 'Zustand', 'Airbridge', 'Appsflyer'],
     category: 'product',
     company: '모비두',
     period: '2024.12 ~ 2025.02',
     highlights: [
-      'WebP 변환·압축·loading/fetchPriority 로딩 전략으로 이미지 성능 개선',
-      'dynamic() 코드 스플리팅 + TanStack Query enabled 조건부로 불필요 API 호출 최소화',
-      'Airbridge·Appsflyer 파라미터 동적 매핑으로 CPI·CPA·CPE 추적 체계 구축',
+      '댓글 기능 전 과정 단독 출시 — 어드민 Config 기반 온/오프로 장애 시 코드 배포 없이 차단 가능',
+      'CDN 변환 쿼리(f=webp, 품질·리사이즈 파라미터)를 적용한 이미지 전송 최적화로 초기 로딩 부하 완화',
+      'React.lazy() + Suspense 기반 컴포넌트 코드 스플리팅 + TanStack Query enabled 조건부 API 호출 제어',
     ],
   },
   {
@@ -181,7 +182,7 @@ export const projects: Project[] = [
     highlights: [
       'SSR/CSR 렌더링 전략을 페이지 특성에 따라 판단해 적용',
       'git 커밋·브랜치 컨벤션, 이미지 네이밍 규칙, env 분리, API 응답 포맷 사전 정의',
-      '운세나라 SEO 최적화로 구글 키워드 첫 페이지 2번째 줄 진입',
+      '메타데이터·구조화 데이터(Structured Data) 기반 SEO 세팅으로 검색엔진 노출 기반 개선 — 운세나라·나우스윙 어드민·셀노크 등 적용',
     ],
     isHighlight: true,
   },
@@ -206,14 +207,14 @@ export const projects: Project[] = [
     title: '앱 보안 취약점 대응',
     description: '금융보안원 전 항목 100% 양호 — RSA·E2E 암호화 적용',
     detail:
-      '금융보안원 취약점 점검을 앞두고 RSA_ENC·E2E 암호화를 적용해 중요 정보 보호 및 전송 중 데이터 변조를 방지. IKARUS·Zoner Antivirus 테스트 완료.',
+      '금융보안원 취약점 점검을 앞두고 RSA_ENC·E2E 암호화를 적용해 중요 정보를 보호하고 전송 구간 보안을 강화. IKARUS·Zoner Antivirus 테스트 완료.',
     techStack: ['React Native', 'TypeScript', 'RSA 암호화', 'E2E 암호화'],
     category: 'security',
     company: 'PAYHADA',
     period: '2023.06 ~ 2023.09',
     metrics: '금융보안원 100% 양호',
     highlights: [
-      'RSA_ENC·E2E 암호화로 중요 정보 보호 및 데이터 변조 방지',
+      'RSA_ENC·E2E 암호화로 중요 정보 보호 및 전송 구간 보안 강화',
       'IKARUS·Zoner Antivirus 테스트 전 항목 통과',
       '글로벌 앱 런칭 및 어드민 리뉴얼(재사용 컴포넌트 60%↑)',
     ],
@@ -233,7 +234,7 @@ export const keyAchievements: KeyAchievement[] = [
     id: 'convention',
     number: '56개',
     unit: '컨벤션 자동 점검',
-    description: '컨벤션 17개 → 56개 AI 기반 전수 자동 점검',
+    description: '17→56개 확대 — ESLint 22 + AI 34로 역할 분리',
     icon: 'sparkles',
   },
   {

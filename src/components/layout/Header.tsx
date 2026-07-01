@@ -5,9 +5,9 @@ import type { NavItem } from '@/types'
 
 const navItems: NavItem[] = [
   { label: 'About', href: '#about', sectionId: 'about' },
-  { label: 'Skills', href: '#skills', sectionId: 'skills' },
-  { label: 'Experience', href: '#experience', sectionId: 'experience' },
   { label: 'Projects', href: '#projects', sectionId: 'projects' },
+  { label: 'Experience', href: '#experience', sectionId: 'experience' },
+  { label: 'Skills', href: '#skills', sectionId: 'skills' },
   { label: 'Contact', href: '#contact', sectionId: 'contact' },
 ]
 

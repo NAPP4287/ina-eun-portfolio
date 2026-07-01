@@ -147,7 +147,7 @@ export default function Contact() {
                 whileTap={{ scale: 0.98 }}
                 className="w-full bg-[#FA2256] text-white font-semibold py-3 rounded-xl hover:bg-[#D91A45] transition-colors duration-200 flex items-center justify-center gap-2 shadow-[0_4px_16px_rgba(250,34,86,0.3)]"
               >
-                <span>메시지 보내기</span>
+                <span>메일 앱에서 보내기</span>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                   <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>

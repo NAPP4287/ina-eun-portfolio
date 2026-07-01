@@ -15,7 +15,7 @@ export const experiences: Experience[] = [
       '스탭 권한 경계 취약점·라이브 송출 장애 등 운영 리스크 자발 발견·해결',
       'AI 기반 컨벤션 자동 점검 체계 설계·도입 (규칙 17 → 56개 전수 자동화)',
       'Vue → Next.js 마이그레이션 QA 0건 · TanStack Query 최초 도입',
-      '클립 플레이어 댓글 E2E 런칭 · MMP 연동 · 성능 최적화',
+      '클립 플레이어 댓글 기능 전 과정 단독 출시 · MMP 연동 · 성능 최적화',
     ],
     techStack: ['Next.js', 'TypeScript', 'TanStack Query', 'Zustand', 'Datadog'],
     color: '#000000',
@@ -30,7 +30,7 @@ export const experiences: Experience[] = [
     achievements: [
       '팀 공용 Next.js 보일러플레이트 설계·표준화 주도 (FE 개발 기간 30 → 15일 단축)',
       '위대한 육아 React Native 앱 단독 런칭 — 기능 정의서·API 명세 직접 작성',
-      '운세나라 SEO 최적화로 구글 키워드 첫 페이지 2번째 줄 진입',
+      '메타데이터·구조화 데이터 기반 SEO 세팅 — 운세나라·나우스윙 어드민·셀노크 등 적용',
     ],
     techStack: ['Next.js', 'React Native', 'TypeScript', 'Recoil'],
     color: '#C9A227',
