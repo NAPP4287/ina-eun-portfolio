@@ -13,7 +13,7 @@ export const projects: Project[] = [
     period: '2024.11 ~ 현재',
     highlights: [
       '툴바 업로드만 허용(붙여넣기·드래그 차단), 확장자·Content-Type·용량(1MB) 검증 후 S3 업로드 → CloudFront URL 본문 삽입',
-      'onUpdate에서 HTML 바이트를 계산해 한도 초과 입력을 자동 undo, 한도 진입 시 토스트 1회 발화 (ref 미러링으로 클로저 최신값 문제 해결)',
+      '용량 한도를 저장 시점에 막지 않고 입력 시점에 자동 복구 — 초과분은 즉시 undo, 안내는 진입 시 1회만 노출해 작성 흐름을 끊지 않음 (onUpdate 바이트 계산 · ref 미러링으로 클로저 최신값 이슈 해결)',
       'CDN JSON/inline 데이터 hydration 시 onUpdate↔hydration 무한 루프를 1회 주입으로 제어',
     ],
     isHighlight: true,
@@ -69,31 +69,31 @@ export const projects: Project[] = [
   {
     id: 'showroom',
     title: '쇼룸 B2B 전시 솔루션',
-    description: '고객사 맞춤형 라이브커머스 전시 페이지 — 삼성닷컴 등 적용',
+    description: '고객사 맞춤형 라이브커머스 전시 위젯 — 삼성닷컴 등에 임베드 적용',
     detail:
-      '고객사마다 브랜드 톤과 전시 방식이 달라 하나의 고정된 전시 페이지로는 대응 불가. 고객사가 자사 스타일에 맞게 커스텀하는 B2B 임베드형 쇼룸 서비스를 개발.',
+      '고객사마다 브랜드 톤과 전시 방식이 달라 하나의 고정된 전시 페이지로는 대응 불가. 고객사가 자사 스타일에 맞게 커스텀하는 B2B 임베드형 쇼룸 서비스를 개발. (여러 도메인으로 구성된 프로젝트 중 쇼룸 설정(마스터)·실시간 미리보기·배너 그룹 영역 담당)',
     techStack: ['Next.js', 'TypeScript', 'iframe postMessage', '@hello-pangea/dnd'],
     category: 'product',
     company: '모비두',
     period: '2024.11 ~ 현재',
     metrics: '10개 파트너사 사용 중',
     highlights: [
+      '담당 영역: 쇼룸 설정(마스터)·실시간 미리보기·배너 그룹 — 삼성닷컴 등 고객사 페이지에는 이 어드민으로 구성된 전시 영역이 임베드됨',
       'postMessage 브릿지로 콘텐츠·테마 변경을 iframe 미리보기에 실시간 반영 (크로스 프레임 통신)',
-      '배너 그룹 드래그 순서 변경, 공개상태(대기/공개/비공개)에 따른 삭제·정렬 제약 등 운영 규칙 반영',
-      '삼성전자 공식몰(삼성닷컴) 등 고객사 전시 페이지 적용, 현재 10개 파트너사가 사용 중',
+      '배너 그룹 드래그 순서 변경, 공개상태(대기/공개/비공개)에 따른 삭제·정렬 제약 등 운영 규칙 반영, 현재 10개 파트너사 사용 중',
     ],
   },
   {
     id: 'engagekit',
     title: 'EngageKit Engagement 고도화',
-    description: '퀴즈·구매인증·쿠폰 어드민 — 삼성 S26 참여 1.1만 명',
+    description: '퀴즈·구매인증·쿠폰 어드민 전반 담당 — 참여 1.1만 명 규모 라이브 운영',
     detail:
-      '삼성 갤럭시 S26 시리즈 사전구매 라이브에서 EngageKit 참여자 1.1만 명, 구매인증 참여 8,140명(단일 방송 기준 최다 참여 기록) 달성. 운영자가 이벤트를 설정·운영하는 어드민/콘솔 전반 담당.',
+      '운영자가 퀴즈·구매인증·쿠폰 이벤트를 설정·운영하는 어드민/콘솔 전반을 담당. 이 어드민으로 운영한 삼성 갤럭시 S26 시리즈 사전구매 라이브가 EngageKit 참여 1.1만 명, 구매인증 8,140명(단일 방송 기준 최다)을 기록.',
     techStack: ['Next.js', 'TypeScript', 'TanStack Query', 'Zustand'],
     category: 'product',
     company: '모비두',
     period: '2026.01 ~ 2026.03',
-    metrics: '참여 1.1만 명 · 구매인증 8,140명',
+    metrics: '운영 규모: 참여 1.1만 · 구매인증 8,140명',
     highlights: [
       '퀴즈·구매인증·쿠폰 3종 어드민 전체 설계·개발',
       '비회원 참여 시 전화번호·이메일 수집 등 참여 조건 처리',
@@ -132,7 +132,7 @@ export const projects: Project[] = [
     highlights: [
       '"정형 가능한 규칙은 ESLint, 맥락 판단은 AI"로 역할 분리',
       'pre-commit·commit-msg·pre-push 훅으로 lint·타입 체크·커밋 포맷 자동 강제',
-      'fixture 기반 모델별 검출 정확도·비용 실측, 비용 42% 절감 모델 도입',
+      '동일 fixture로 모델별 검출률·비용 실측 → 검출 손실 없이 42% 저비용 모델 선택 (데이터 기반 의사결정)',
     ],
     isHighlight: true,
   },
@@ -226,8 +226,8 @@ export const keyAchievements: KeyAchievement[] = [
   {
     id: 'samsung-engage',
     number: '1.1만',
-    unit: '라이브 참여',
-    description: 'EngageKit 운영 어드민 담당 — 구매인증 8,140명 (단일 방송 최다)',
+    unit: '규모 라이브 운영',
+    description: 'EngageKit 운영 어드민 담당 — 참여 1.1만·구매인증 8,140명 규모 (단일 방송 최다)',
     icon: 'users',
   },
   {
