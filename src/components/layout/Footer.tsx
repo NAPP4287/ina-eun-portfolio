@@ -3,11 +3,11 @@ export default function Footer() {
     <footer className="py-8 px-6 border-t border-[#e5e7eb] bg-white">
       <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4">
         <p className="text-[#9ca3af] text-sm">
-          © 2025 이나은. Built with React + Vite + Tailwind CSS.
+          © 2026 이나은. Built with React + Vite + Tailwind CSS.
         </p>
         <div className="flex items-center gap-4">
           <a
-            href="https://github.com/Lee-Na-eun"
+            href="https://github.com/NAPP4287"
             target="_blank"
             rel="noopener noreferrer"
             className="text-[#9ca3af] hover:text-[#FA2256] transition-colors text-sm"

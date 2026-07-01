@@ -88,7 +88,7 @@ export default function About() {
                 { label: '위치', value: '서울시 구로구' },
                 { label: '연락처', value: 'nanni4287@gmail.com' },
                 { label: '경력', value: '4년+ (2022.04 ~)' },
-                { label: 'GitHub', value: 'github.com/Lee-Na-eun' },
+                { label: 'GitHub', value: 'github.com/NAPP4287' },
               ].map((item) => (
                 <div key={item.label} className="flex gap-4">
                   <span className="text-[#9ca3af] text-sm w-16 flex-shrink-0">{item.label}</span>

@@ -125,7 +125,7 @@ export default function Hero() {
             </svg>
           </motion.a>
           <motion.a
-            href="https://github.com/Lee-Na-eun"
+            href="https://github.com/NAPP4287"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.04 }}
