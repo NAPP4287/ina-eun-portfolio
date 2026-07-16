@@ -22,9 +22,9 @@ export const experiences: Experience[] = [
   },
   {
     id: 'nexacode',
-    company: 'NEXACODE',
+    company: '엔에이치에스(NHS)',
     role: '프론트엔드 / 개발 1팀',
-    period: '2024.03 ~ 2024.10',
+    period: '2024.03 ~ 2024.11',
     current: false,
     description: 'SI — 다수 클라이언트 프로젝트 납품',
     achievements: [

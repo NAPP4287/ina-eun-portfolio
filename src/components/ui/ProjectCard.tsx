@@ -8,7 +8,7 @@ interface ProjectCardProps {
 
 const categoryColors: Record<string, string> = {
   모비두: '#FA2256',
-  NEXACODE: '#7c6dfa',
+  '엔에이치에스(NHS)': '#7c6dfa',
   PAYHADA: '#f59e0b',
   'ACE 엔터테인먼트': '#ef4444',
 }

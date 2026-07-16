@@ -66,6 +66,7 @@ export default function Experience() {
           <div className="space-y-4">
             {[
               { period: '2021.04 ~ 2021.10', name: '코드스테이츠', detail: '풀스택 개발 과정' },
+              { period: '2020.01 ~ 2020.12', name: 'SBS 아카데미컴퓨터학원', detail: 'Web Design' },
               { period: '2016.03 ~ 2019.02', name: '인천재능대학교', detail: '호텔관광과' },
             ].map((edu) => (
               <div key={edu.name} className="flex flex-wrap items-center gap-4 py-4 border-b border-[#f3f4f6] last:border-0">

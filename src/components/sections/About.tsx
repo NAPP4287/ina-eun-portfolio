@@ -69,18 +69,21 @@ export default function About() {
             transition={{ ...defaultTransition, delay: 0.1 }}
           >
             <p className="text-[#6b7280] text-lg leading-relaxed mb-6">
-              버튼 하나가 눌린 뒤{' '}
-              <span className="text-[#0f0f0f] font-medium">서버·세션·로그·운영 화면까지</span> 어떤 일이 벌어지는지 끝까지
-              따라가는 프론트엔드 개발자입니다.
+              라이브커머스·핀테크·SI 환경에서{' '}
+              <span className="text-[#0f0f0f] font-medium">운영자가 사용하는 어드민과 사용자가 접하는 플레이어·앱</span>을
+              개발해온 4년차 프론트엔드 개발자입니다.
             </p>
             <p className="text-[#6b7280] text-lg leading-relaxed mb-6">
-            라이브커머스·핀테크·SI 환경에서{' '}
-              <span className="text-[#0f0f0f] font-medium">운영자가 쓰는 에디터·콘솔·어드민부터 사용자가 접하는 전시·플레이어·앱 화면까지</span>개발해 왔습니다.
+              복잡한 비즈니스 규칙을 화면과 데이터 흐름으로 구조화하는 데 강점이 있습니다. 상품·이벤트·전환 귀속처럼 조건과
+              관계가 복잡한 도메인을 다뤘고, 발급형·오픈형으로 나뉘는 어필리에이트 링크·캠페인 구조를 어드민과 크리에이터
+              화면에 일관되게 구현했습니다. 또한 권한 경계·입력 정책처럼 설계 오류가 운영 사고로 이어질 수 있는 영역을 끝까지
+              추적해 <span className="text-[#FA2256] font-medium">접근 제어와 운영 정책을 개선</span>했습니다.
             </p>
             <p className="text-[#6b7280] text-lg leading-relaxed">
-              요구사항을 구현하는 데서 멈추지 않고, {' '}
-              <span className="text-[#FA2256] font-medium">운영 리스크의 원인을 찾아 정책과 구조를 개선합니다.</span>{' '}
-              반복되는 검증은{' '}<span className="text-[#FA2256] font-medium">표준과 자동화로 전환합니다.</span>
+              반복되는 문제는 개인의 주의보다{' '}
+              <span className="text-[#FA2256] font-medium">표준과 자동화로 해결</span>합니다. 팀 컨벤션 점검을 ESLint 커스텀
+              룰과 AI 리뷰로 자동화했고, 공용 보일러플레이트로 유사 프로젝트의 프론트엔드 개발 기간을 30일에서 15일로
+              단축했습니다.
             </p>
 
             <div className="mt-10 space-y-3">

@@ -10,7 +10,7 @@ export const projects: Project[] = [
     techStack: ['Next.js', 'TypeScript', 'tiptap', 'Mantine', 'TanStack Query', 'Zustand'],
     category: 'product',
     company: '모비두',
-    period: '2024.11 ~ 현재',
+    period: '2026.05',
     highlights: [
       '툴바 업로드만 허용(붙여넣기·드래그 차단), 확장자·Content-Type·용량(1MB) 검증 후 S3 업로드 → CloudFront URL 본문 삽입',
       '용량 한도를 저장 시점에 막지 않고 입력 시점에 자동 복구 — 초과분은 즉시 undo, 안내는 진입 시 1회만 노출해 작성 흐름을 끊지 않음 (onUpdate 바이트 계산 · ref 미러링으로 클로저 최신값 이슈 해결)',
@@ -27,7 +27,7 @@ export const projects: Project[] = [
     techStack: ['Next.js', 'TypeScript', '권한/보안 설계'],
     category: 'security',
     company: '모비두',
-    period: '2024.11 ~ 현재',
+    period: '2024.12',
     metrics: '접근 제어 취약점 단독 해결',
     highlights: [
       '토큰 권한 정보와 실제 라우팅 동작을 비교해 검증 누락 접근 경로 규명',
@@ -45,7 +45,7 @@ export const projects: Project[] = [
     techStack: ['Next.js', 'TypeScript'],
     category: 'security',
     company: '모비두',
-    period: '2024.11 ~ 현재',
+    period: '2026.05',
     highlights: [
       'PNG 변환 시 용량 증가 → 2MB 초과 시 송출 장애가 발생함을 직접 테스트·확인',
       '업로드 단계에서 PNG만 허용 + 용량(2MB 이하)을 검증하는 입력 정책을 제안·구현',
@@ -75,7 +75,7 @@ export const projects: Project[] = [
     techStack: ['Next.js', 'TypeScript', 'iframe postMessage', '@hello-pangea/dnd'],
     category: 'product',
     company: '모비두',
-    period: '2024.11 ~ 현재',
+    period: '2025.03 ~ 2025.04',
     metrics: '10개 파트너사 사용 중',
     highlights: [
       '담당 영역: 쇼룸 설정(마스터)·실시간 미리보기·배너 그룹 — 삼성닷컴 등 고객사 페이지에는 이 어드민으로 구성된 전시 영역이 임베드됨',
@@ -92,7 +92,7 @@ export const projects: Project[] = [
     techStack: ['Next.js', 'TypeScript', 'TanStack Query', 'Zustand'],
     category: 'product',
     company: '모비두',
-    period: '2026.01 ~ 2026.03',
+    period: '2025.06 ~ 2025.07',
     metrics: '운영 규모: 참여 1.1만 · 구매인증 8,140명',
     highlights: [
       '퀴즈·구매인증·쿠폰 3종 어드민 전체 설계·개발',
@@ -110,7 +110,7 @@ export const projects: Project[] = [
     techStack: ['Next.js', 'TypeScript', 'TanStack Query', 'Zustand'],
     category: 'product',
     company: '모비두',
-    period: '2024.11 ~ 현재',
+    period: '2025.08 ~ 2025.12',
     metrics: '누적 링크 832개',
     highlights: [
       '링크 방식(1:1 직접 귀속)·캠페인 방식(1:N 오픈형) 두 생성 경로 일관 처리',
@@ -127,11 +127,12 @@ export const projects: Project[] = [
     techStack: ['Claude Code', 'ESLint Custom Rules', 'Git Hooks', 'TypeScript'],
     category: 'devex',
     company: '모비두',
-    period: '2025.01 ~ 현재',
+    period: '2026.06',
     metrics: '규칙 17 → 56개 (+229%)',
     highlights: [
-      '"정형 가능한 규칙은 ESLint, 맥락 판단은 AI"로 역할 분리',
+      '"정형 가능한 규칙은 ESLint, 맥락 판단은 AI"로 역할 분리 — ESLint 커스텀 룰 9 → 22개 확장',
       'pre-commit·commit-msg·pre-push 훅으로 lint·타입 체크·커밋 포맷 자동 강제',
+      'RuleTester 149개와 통합 픽스처로 커스텀 룰의 정상·예외 케이스 검증',
       '동일 fixture로 모델별 검출률·비용 실측 → 검출 손실 없이 42% 저비용 모델 선택 (데이터 기반 의사결정)',
     ],
     isHighlight: true,
@@ -153,6 +154,23 @@ export const projects: Project[] = [
     ],
   },
   {
+    id: 'clip-analytics',
+    title: '클립 플레이어 행동 이벤트 수집·운영 지표 시각화',
+    description: '플레이어 사용자 행동 데이터를 GA로 수집하고 어드민에서 ECharts로 시각화',
+    detail:
+      '클립 성과·사용자 반응을 운영자가 확인할 수 있도록 플레이어 행동 데이터 수집과 어드민 시각화 기능을 구현. ECharts를 프로덕트에 처음 도입.',
+    techStack: ['React', 'TypeScript', 'ECharts', 'Google Analytics'],
+    category: 'product',
+    company: '모비두',
+    period: '2025.01 ~ 2025.03',
+    highlights: [
+      'VH·PV·시청시간·좋아요·상품 클릭 등 주요 행동 지표를 GA 이벤트로 수집',
+      '각 행동 발생 시점에 이벤트·관련 데이터를 전달하는 트래킹 로직 구현',
+      'ECharts를 프로덕트에 처음 도입해 클립별 행동 지표를 어드민에서 시각화',
+      '정형 데이터 포맷을 Props로 전달하면 차트를 생성하는 공통 컴포넌트 설계로 반복 구현 감소',
+    ],
+  },
+  {
     id: 'migration',
     title: 'Vue → Next.js 어드민 마이그레이션',
     description: 'QA 이슈 0건 · 운영 중단 없는 전환 · TanStack Query 최초 도입',
@@ -161,7 +179,7 @@ export const projects: Project[] = [
     techStack: ['Next.js', 'TypeScript', 'TanStack Query', 'Vue'],
     category: 'devex',
     company: '모비두',
-    period: '2024.11 ~ 2025.01',
+    period: '2024.12 ~ 2025.03',
     metrics: 'QA 0건 릴리즈',
     highlights: [
       'PM·PO 온보딩 직접 진행 — 권한 체계 포함 어드민 도메인 지식 전달',
@@ -176,8 +194,8 @@ export const projects: Project[] = [
       '매 프로젝트마다 반복되는 초기 세팅·컨벤션 관리 문제 해결. fetch + new Proxy 기반 토큰 자동 갱신, API 요청 공통 함수, Atomic 컴포넌트 체계 표준화. 협업 기준 문서까지 포함.',
     techStack: ['Next.js', 'TypeScript', 'ESLint', 'Husky'],
     category: 'devex',
-    company: 'NEXACODE',
-    period: '2024.03 ~ 2024.06',
+    company: '엔에이치에스(NHS)',
+    period: '2024.06',
     metrics: '개발 기간 50% 단축',
     highlights: [
       'SSR/CSR 렌더링 전략을 페이지 특성에 따라 판단해 적용',
@@ -194,8 +212,8 @@ export const projects: Project[] = [
       '기능 정의서·API 명세(요청/응답·메소드)를 비개발 직군도 이해할 수 있는 형태로 직접 작성해 협업 기준 수립. 회원·결제·콘텐츠·커뮤니티·육아툰·심리검사 전 도메인 담당.',
     techStack: ['React Native', 'TypeScript', 'Recoil'],
     category: 'product',
-    company: 'NEXACODE',
-    period: '2024.08 ~ 2024.10',
+    company: '엔에이치에스(NHS)',
+    period: '2024.08 ~ 2024.11',
     highlights: [
       'Android · iOS 동시 단독 런칭 및 앱 스토어 심사 대응',
       '공통 스타일링 컴포넌트 설계로 플랫폼 간 코드 재사용성 향상',
@@ -211,7 +229,7 @@ export const projects: Project[] = [
     techStack: ['React Native', 'TypeScript', 'RSA 암호화', 'E2E 암호화'],
     category: 'security',
     company: 'PAYHADA',
-    period: '2023.06 ~ 2023.09',
+    period: '2023.09 ~ 2023.11',
     metrics: '금융보안원 100% 양호',
     highlights: [
       'RSA_ENC·E2E 암호화로 중요 정보 보호 및 전송 구간 보안 강화',

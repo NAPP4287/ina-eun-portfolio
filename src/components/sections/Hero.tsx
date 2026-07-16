@@ -101,9 +101,9 @@ export default function Hero() {
           transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1], delay: 0.7 }}
           className="text-[#6b7280] text-lg leading-relaxed max-w-2xl mb-12"
         >
-          버튼 하나가 눌린 뒤 서버·세션·로그·운영 화면까지 끝까지 따라갑니다.
+          라이브커머스·핀테크·SI 환경에서 운영자가 쓰는 어드민과 사용자가 접하는 플레이어·앱을 개발해온 4년차 프론트엔드 개발자입니다.
           <br className="hidden md:block" />
-          운영 리스크를 스스로 찾아 해결하고, 반복되는 일을 표준·자동화로 줄이는 데 강점이 있습니다.
+          복잡한 비즈니스 규칙을 구조화하고, 반복은 표준·자동화로 줄이는 데 강점이 있습니다.
         </motion.p>
 
         {/* CTA 버튼 */}
